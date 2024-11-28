@@ -8,6 +8,7 @@ namespace WarehouseBase.Domain.Entities
 {
     public class BaseRecord
     {
+        public int Id { get; set; }
         public string NameOfPart { get; set; } = default!;
 
         public string? IndeksNumber { get; set; }
