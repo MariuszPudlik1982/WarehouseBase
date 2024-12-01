@@ -1,23 +1,32 @@
-﻿<h1>Create Car Workshop</h1>
+﻿<h1>Create BaseRecord</h1>
 
 <hr/>
 
 <div class="row">
     <div class="col-md-4">
-        <form action="/CarWorkshop/Create" method="post">
+        <form action="/WarehouseBase/Create" method="post">
             <div class="form-group mb-3">
-                <label class="control-label" for="NameofPart">NameofPart</label>
+                <label class="control-label" for="NameOfPart">NameOfPart</label>
                 <input class="form-control" type="text" id="NameofPart" name="NameofPart">
             </div>
 
             <div class="form-group mb-3">
                 <label class="control-label" for="IndeksNumber">IndeksNumber</label>
-                <input class="form-control" type="text" id="IndeksNumber" name="IndeksNumbe">
+                <input class="form-control" type="text" id="IndeksNumber" name="IndeksNumber">
             </div>
 
             <div class="form-group mb-3">
                 <label class="control-label" for="Description">Description</label>
                 <input class="form-control" type="text" id="Description" name="Description">
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" for="NumberOfPartsInBase">NumberOfPartsInBase</label>
+                <input class="form-control" type="text" id="NumberOfPartsInBase" name="NumberOfPartsInBase">
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="submit" value="Create" class="btn btn-primary">
             </div>
         </form>
     

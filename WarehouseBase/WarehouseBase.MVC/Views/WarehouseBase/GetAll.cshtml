@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WarehouseBase.Domain.Entities.BaseRecord>
+
+@{
+    ViewData["Title"] = "GetAll";
+}
+
+<h1>GetAll</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfPart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndeksNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfPartsInBase)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfPart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndeksNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPartsInBase)
+            </td>
+            <td>
+               <a asp-action="AddItem" asp-route-id=@item.Id>Add</a> |
+               <a asp-action="RemoveItem" asp-route-id=@item.Id>RemoveItem</a>|
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -10,5 +10,11 @@ namespace WarehouseBase.Domain.Interfaces
     public interface IWarehouseBaseRepository
     {
         Task Create(BaseRecord baseRecord);
+
+        Task<IEnumerable<BaseRecord>> GetAll();
+
+        public  Task<BaseRecord> GetById(int id);
+
+        Task Commit();
     }
 }

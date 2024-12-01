@@ -11,8 +11,9 @@ namespace WarehouseBase.MVC.Controllers
         private readonly IWarehouseBaseService _warehouseBaseService;
         public WarehouseBaseController(IWarehouseBaseService warehouseBaseService)
         {
-                _warehouseBaseService = warehouseBaseService;
+            _warehouseBaseService = warehouseBaseService;
         }
+
 
         public IActionResult Create()
         {
@@ -22,12 +23,34 @@ namespace WarehouseBase.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(BaseRecord baseRecord)
         {
-           await _warehouseBaseService.Create(baseRecord);
+            await _warehouseBaseService.Create(baseRecord);
             return RedirectToAction(nameof(Create));//TODO:Refactor
         }
 
-       
+
         // GET: WarehouseBaseController/Delete/5
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var allBasRecords = await _warehouseBaseService.GetAll();
+            return View(allBasRecords);
+        }
+
        
+        public async Task<IActionResult> AddItem(int id)
+        {
+            
+          await  _warehouseBaseService.AddItem(id);
+            return RedirectToAction(nameof(GetAll));
+        }
+
+        public async Task<IActionResult> RemoveItem(int id)
+        {
+
+            await _warehouseBaseService.RemoveItem(id);
+            return RedirectToAction(nameof(GetAll));
+        }
+
+
     }
 }
